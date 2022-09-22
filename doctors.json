@@ -1,0 +1,72 @@
+[
+	{
+		"name": "Lionel Alexander",
+		"city": "faridabad",
+		"email": "semper.egestas@protonmail.ca",
+		"phoneNumber": 5279895466,
+		"speciality": "ent"
+	},
+	{
+		"name": "Amery Wyatt",
+		"city": "faridabad",
+		"email": "donec.consectetuer@google.ca",
+		"phoneNumber": 8626735485,
+		"speciality": "gynecology"
+	},
+	{
+		"name": "Magee Mcfadden",
+		"city": "delhi",
+		"email": "donec.tempus@icloud.edu",
+		"phoneNumber": 8432461354,
+		"speciality": "orthopedic"
+	},
+	{
+		"name": "Chantale Wong",
+		"city": "faridabad",
+		"email": "sed.nunc.est@outlook.net",
+		"phoneNumber": 7922728857,
+		"speciality": "ent"
+	},
+	{
+		"name": "Lewis Spencer",
+		"city": "delhi",
+		"email": "cursus.et.eros@protonmail.org",
+		"phoneNumber": 2668384535,
+		"speciality": "dermatology"
+	},
+	{
+		"name": "Evelyn Romero",
+		"city": "delhi",
+		"email": "sed.nunc@icloud.org",
+		"phoneNumber": 8122483552,
+		"speciality": "dermatology"
+	},
+	{
+		"name": "Keely Crawford",
+		"city": "faridabad",
+		"email": "posuere.cubilia@aol.org",
+		"phoneNumber": 9448670440,
+		"speciality": "gynecology"
+	},
+	{
+		"name": "Duncan Burt",
+		"city": "faridabad",
+		"email": "mollis.nec.cursus@icloud.com",
+		"phoneNumber": 4113626413,
+		"speciality": "gynecology"
+	},
+	{
+		"name": "Neville Mckinney",
+		"city": "faridabad",
+		"email": "pede.cras.vulputate@yahoo.couk",
+		"phoneNumber": 7914224447,
+		"speciality": "dermatology"
+	},
+	{
+		"name": "Sasha Graham",
+		"city": "delhi",
+		"email": "aliquam@yahoo.org",
+		"phoneNumber": 3516231417,
+		"speciality": "ent"
+	}
+]
