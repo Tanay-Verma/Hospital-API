@@ -1,18 +1,40 @@
 const Doctor = require('../models/doctor')
 
 const getDoctors = async (req,res)=>{
-    const {id:doctorID} = req.query
-    let doctor 
+    const {id:doctorID, name, city, phoneNumber, email, speciality, fields} = req.query
+
+    let queryObj = {}
     if(doctorID){
-        doctor = await Doctor.findOne({_id:doctorID})
+        queryObj._id = doctorID
     }
-    else{
-        doctor = await Doctor.find({})
+    if(name){
+        queryObj.name = name
     }
-    if(!doctor) throw Error('no user found')
+    if(city){
+        queryObj.city = city
+    }
+    if(phoneNumber){
+        queryObj.phoneNumber = phoneNumber
+    }
+    if(email){
+        queryObj.email = email
+    }
+    if(speciality){
+        queryObj.speciality = speciality
+    }
+
+    let doctor =  Doctor.find(queryObj)
+
+    if(fields){
+        const fieldsString = fields.split(',').join(' ')
+        doctor = doctor.select(fieldsString)
+    }
+    if(doctor.length === 0) throw Error('no user found')
+
+    const data = await doctor
     res.json({
         success:true,
-        data:{doctor},
+        data,
         nbHits:doctor.length
     })
 }
