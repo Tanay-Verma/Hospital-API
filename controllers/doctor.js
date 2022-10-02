@@ -40,11 +40,12 @@ const getDoctors = async (req,res)=>{
 
     // if the no data is found
     if(data.length === 0) throw Error('no user found')
+    
     // response to successful request
     res.json({
         success:true,
         data,
-        nbHits:doctor.length
+        nbHits:data.length
     })
 }
 
@@ -55,11 +56,16 @@ const createDoctor = async (req,res)=>{
 
 const updateDoctor = async (req,res)=>{
     const {id:doctorID} = req.query
+    // find the doctor by id and update their data with the data coming from request body
     const doctor = await Doctor.findOneAndUpdate({_id:doctorID},req.body,{
         new:true,
         runValidators:true
     })
-    if(!doctor) throw Error(`No doctor with id: ${doctorID}`)
+    // error if no doctor with the provided id is found
+    if(!doctor) return res.status(404).json({
+        success:false,
+        msg:`No doctor with id: ${doctorID}`
+    })
 
     res.status(200).json({
         success:true,
@@ -67,14 +73,26 @@ const updateDoctor = async (req,res)=>{
     })
 }
 
-const deleteAllDoctors = async(req,res)=>{
-    await Doctor.deleteMany()
-    res.json({success:true})
+const deleteDoctors = async(req,res)=>{
+    const {id:doctorID} = req.query
+    const doctor = await Doctor.findOneAndDelete({_id:doctorID})
+    doctor ? res.json({
+        success:true,
+        data:doctor
+    }) : res.status(404).json({
+        success:false,
+        msg:`No doctor with id: ${doctorID}`
+    })
 }
+
+// const deleteAllDoctors = async(req,res)=>{
+//     await Doctor.deleteMany()
+//     res.json({success:true})
+// }
 
 module.exports = {
     getDoctors,
     createDoctor,
     updateDoctor,
-    deleteAllDoctors
+    deleteDoctors
 }

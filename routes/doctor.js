@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const {getDoctors, createDoctor,updateDoctor ,deleteAllDoctors} = require('../controllers/doctor')
+const {getDoctors, createDoctor,updateDoctor ,deleteDoctors} = require('../controllers/doctor')
 
-router.route('/').get(getDoctors).post(createDoctor).patch(updateDoctor).delete(deleteAllDoctors)
+router.route('/').get(getDoctors).post(createDoctor).patch(updateDoctor).delete(deleteDoctors)
 
 
 module.exports = router

@@ -4,6 +4,7 @@ const errorHandlerMiddleware = async (err,req,res,next) => {
         success:false,
         msg:err.message
     })
+    
     if (err.name === 'MongoServerError' && err.code === 11000) return res.status(409).json({
         success:false,
         msg:'email must be unique'})
